@@ -1,0 +1,320 @@
+.mission-scene {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 100vh;
+    overflow: hidden;
+    background: #010308;
+}
+
+.mission-scene canvas {
+    position: absolute;
+    inset: 0;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.mission-overlay {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    color: #dffaff;
+    font-family:
+        "Segoe UI",
+        Inter,
+        system-ui,
+        sans-serif;
+}
+
+.mission-topbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 68px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding:
+        0 42px;
+
+    border-bottom:
+        1px solid rgba(65, 210, 240, 0.12);
+
+    background:
+        linear-gradient(180deg,
+            rgba(1, 7, 12, 0.8),
+            rgba(1, 7, 12, 0));
+}
+
+.mission-brand {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+
+    letter-spacing: 0.16em;
+}
+
+.mission-brand-main {
+    font-size: 23px;
+    font-weight: 700;
+}
+
+.mission-brand-ai {
+    font-size: 11px;
+    color: #42dfff;
+    font-weight: 700;
+}
+
+.mission-status {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    font-size: 9px;
+    letter-spacing: 0.18em;
+
+    color: #71919c;
+}
+
+.status-dot {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #43efb1;
+
+    box-shadow:
+        0 0 10px rgba(67, 239, 177, 0.9);
+
+    animation:
+        missionPulse 1.5s infinite;
+}
+
+.mission-info-left {
+    position: absolute;
+
+    left: 48px;
+    bottom: 125px;
+
+    width: 330px;
+}
+
+.mission-label {
+    margin-bottom: 18px;
+
+    font-size: 9px;
+    letter-spacing: 0.25em;
+
+    color: #3ed8f6;
+}
+
+.mission-title {
+    font-size: clamp(42px,
+            5vw,
+            78px);
+
+    line-height: 0.92;
+
+    font-weight: 300;
+
+    letter-spacing: -0.04em;
+
+    color: #eafaff;
+
+    text-shadow:
+        0 0 30px rgba(45, 213, 255, 0.1);
+}
+
+.mission-subtitle {
+    margin-top: 24px;
+
+    font-size: 10px;
+
+    line-height: 1.8;
+
+    letter-spacing: 0.17em;
+
+    color: #62838e;
+}
+
+.mission-info-right {
+    position: absolute;
+
+    right: 42px;
+    top: 145px;
+
+    width: 170px;
+
+    padding:
+        18px 16px;
+
+    border-left:
+        1px solid rgba(57, 218, 248, 0.35);
+
+    background:
+        linear-gradient(90deg,
+            rgba(4, 19, 27, 0.28),
+            rgba(4, 19, 27, 0));
+
+    font-size: 8px;
+
+    line-height: 1.6;
+
+    letter-spacing: 0.17em;
+
+    color: #54727c;
+}
+
+.mission-info-right strong {
+    display: block;
+
+    margin-top: 4px;
+
+    font-size: 10px;
+
+    color: #bceefa;
+
+    font-weight: 500;
+}
+
+.mission-divider {
+    height: 1px;
+
+    margin:
+        14px 0;
+
+    background:
+        rgba(66,
+            216,
+            245,
+            0.1);
+}
+
+.mission-bottom {
+    position: absolute;
+
+    left: 42px;
+    right: 42px;
+    bottom: 28px;
+
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    font-size: 8px;
+
+    letter-spacing: 0.18em;
+
+    color: #52717c;
+}
+
+.mission-bottom span:nth-child(even) {
+    color: #2edcff;
+}
+
+.target-hud {
+    min-width: 145px;
+
+    padding: 10px 12px;
+
+    border-left:
+        1px solid rgba(61, 225, 255, 0.8);
+
+    background:
+        rgba(1, 11, 17, 0.82);
+
+    box-shadow:
+        0 0 24px rgba(19, 185, 222, 0.08);
+
+    color: #8edcea;
+
+    font-family:
+        "Segoe UI",
+        Inter,
+        sans-serif;
+
+    font-size: 8px;
+
+    line-height: 1.7;
+
+    letter-spacing: 0.12em;
+
+    white-space: nowrap;
+
+    backdrop-filter: blur(8px);
+}
+
+.target-hud-title {
+    color: #44e2ff;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.18em;
+}
+
+.target-hud-line {
+    width: 100%;
+
+    height: 1px;
+
+    margin:
+        5px 0 6px;
+
+    background:
+        rgba(66,
+            225,
+            255,
+            0.22);
+}
+
+@keyframes missionPulse {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.45;
+        transform: scale(0.7);
+    }
+}
+
+@media (max-width: 800px) {
+    .mission-topbar {
+        padding:
+            0 20px;
+    }
+
+    .mission-info-left {
+        left: 22px;
+        bottom: 95px;
+    }
+
+    .mission-info-right {
+        display: none;
+    }
+
+    .mission-bottom {
+        left: 20px;
+        right: 20px;
+
+        gap: 7px;
+
+        font-size: 7px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .status-dot {
+        animation: none;
+    }
+}

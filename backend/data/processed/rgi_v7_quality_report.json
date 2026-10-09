@@ -1,0 +1,24 @@
+{
+    "dataset": "RGI 7.0",
+    "pipeline": "GLYAB AI RGI 7.0 production preprocessing",
+    "input_files": [
+        "RGI2000-v7.0-G-14_south_asia_west.shp",
+        "RGI2000-v7.0-G-15_south_asia_east.shp"
+    ],
+    "records_after_processing": 56149,
+    "duplicate_rgi_ids_removed": 0,
+    "crs": "EPSG:4326",
+    "geometry_types": {
+        "Polygon": 56149
+    },
+    "invalid_geometry_count": 0,
+    "invalid_coordinate_count": 0,
+    "invalid_rgi_id_count": 0,
+    "invalid_area_count": 0,
+    "invalid_elevation_count": 0,
+    "quality_distribution": {
+        "GOOD": 56149
+    },
+    "missing_glacier_name_count": 53898,
+    "missing_glacier_name_percent": 95.991
+}

@@ -1,0 +1,23 @@
+{
+    "project": "GLYAB",
+    "target": "historical_glof",
+    "features": [
+        "latitude",
+        "longitude",
+        "area_km2",
+        "elevation_min_m",
+        "elevation_max_m",
+        "mean_elevation_m",
+        "slope_deg",
+        "aspect_deg",
+        "elevation_range_m",
+        "area_log",
+        "o1region"
+    ],
+    "excluded_features": [
+        "historical_event_count_proxy",
+        "historical_event_year",
+        "historical_glof",
+        "nearest_glof_km"
+    ]
+}

@@ -1,0 +1,56 @@
+# Dependencies
+node_modules/
+frontend/node_modules/
+
+# Python
+__pycache__/
+**/__pycache__/
+*.pyc
+.venv/
+venv/
+env/
+
+# Frontend build
+frontend/dist/
+frontend/build/
+
+# Large GIS / Remote Sensing data
+backend/data/raw/
+*.gpkg
+*.shp
+*.dbf
+*.shx
+*.prj
+*.zip
+*.tif
+*.tiff
+*.hdf
+*.nc
+
+# Large datasets
+*.csv
+
+# ML generated files
+*.pkl
+*.joblib
+
+# Databases
+*.db
+*.sqlite
+*.sqlite3
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db

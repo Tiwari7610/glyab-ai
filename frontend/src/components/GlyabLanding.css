@@ -1,0 +1,1900 @@
+/* =========================================================
+   GLYAB AI
+   PREMIUM CRYOSPHERE INTELLIGENCE LANDING
+   ========================================================= */
+
+:root {
+    --bg: #05080b;
+    --bg-soft: #080e12;
+    --panel: rgba(10, 18, 23, 0.72);
+
+    --text: #f1fbfd;
+    --text-soft: #9bb0b7;
+    --text-muted: #61767e;
+
+    --cyan: #63e5ff;
+    --cyan-soft: #35bfdc;
+    --cyan-dim: rgba(99, 229, 255, 0.16);
+
+    --border: rgba(140, 214, 229, 0.10);
+    --border-bright: rgba(99, 229, 255, 0.28);
+
+    --shadow:
+        0 25px 80px rgba(0, 0, 0, 0.45);
+
+    --radius: 14px;
+}
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+button {
+    font: inherit;
+}
+
+button:focus-visible {
+    outline: 1px solid var(--cyan);
+    outline-offset: 4px;
+}
+
+
+/* =========================================================
+   MAIN APPLICATION
+   ========================================================= */
+
+.glyab-landing {
+    position: fixed;
+    inset: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    color: var(--text);
+
+    background:
+        radial-gradient(circle at 72% 28%,
+            rgba(27, 131, 160, 0.13),
+            transparent 28%),
+        radial-gradient(circle at 18% 70%,
+            rgba(20, 75, 98, 0.10),
+            transparent 30%),
+        linear-gradient(180deg,
+            #020609 0%,
+            #050a0e 52%,
+            #020609 100%);
+
+    font-family:
+        Inter,
+        "Segoe UI",
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        sans-serif;
+
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+
+/* =========================================================
+   BACKGROUND GRID
+   ========================================================= */
+
+.landing-grid {
+    position: fixed;
+    inset: 0;
+
+    z-index: 0;
+
+    pointer-events: none;
+
+    opacity: 0.095;
+
+    background-image:
+        linear-gradient(rgba(89, 216, 238, 0.10) 1px,
+            transparent 1px),
+        linear-gradient(90deg,
+            rgba(89, 216, 238, 0.10) 1px,
+            transparent 1px);
+
+    background-size:
+        72px 72px;
+
+    mask-image:
+        linear-gradient(to bottom,
+            black 0%,
+            black 45%,
+            transparent 100%);
+}
+
+
+/* =========================================================
+   AMBIENT LIGHT
+   ========================================================= */
+
+.landing-glow {
+    position: fixed;
+
+    z-index: 0;
+
+    pointer-events: none;
+
+    border-radius: 50%;
+
+    filter: blur(90px);
+
+    will-change: transform;
+}
+
+
+.landing-glow-one {
+    width: 520px;
+    height: 520px;
+
+    top: 2%;
+    right: 4%;
+
+    background:
+        radial-gradient(circle,
+            rgba(38, 178, 211, 0.13),
+            transparent 68%);
+
+    animation:
+        ambientOne 16s ease-in-out infinite alternate;
+}
+
+
+.landing-glow-two {
+    width: 420px;
+    height: 420px;
+
+    left: -100px;
+    bottom: 0;
+
+    background:
+        radial-gradient(circle,
+            rgba(32, 102, 132, 0.11),
+            transparent 68%);
+
+    animation:
+        ambientTwo 20s ease-in-out infinite alternate;
+}
+
+
+@keyframes ambientOne {
+    0% {
+        transform:
+            translate3d(0, 0, 0) scale(1);
+    }
+
+    50% {
+        transform:
+            translate3d(-35px, 25px, 0) scale(1.08);
+    }
+
+    100% {
+        transform:
+            translate3d(25px, -30px, 0) scale(0.95);
+    }
+}
+
+
+@keyframes ambientTwo {
+    0% {
+        transform:
+            translate3d(0, 0, 0) scale(1);
+    }
+
+    100% {
+        transform:
+            translate3d(80px, -45px, 0) scale(1.12);
+    }
+}
+
+
+/* =========================================================
+   STARS
+   ========================================================= */
+
+.landing-stars {
+    position: fixed;
+    inset: 0;
+
+    z-index: 0;
+
+    pointer-events: none;
+}
+
+
+.landing-stars span {
+    position: absolute;
+
+    width: 2px;
+    height: 2px;
+
+    border-radius: 50%;
+
+    background: #a9f3ff;
+
+    opacity: 0.28;
+
+    box-shadow:
+        0 0 8px rgba(99, 229, 255, 0.7);
+
+    animation:
+        starFloat 5s ease-in-out infinite;
+}
+
+
+.landing-stars span:nth-child(1) {
+    left: 6%;
+    top: 17%;
+}
+
+.landing-stars span:nth-child(2) {
+    left: 17%;
+    top: 42%;
+    animation-delay: 1s;
+}
+
+.landing-stars span:nth-child(3) {
+    left: 29%;
+    top: 14%;
+    animation-delay: 2s;
+}
+
+.landing-stars span:nth-child(4) {
+    left: 46%;
+    top: 34%;
+    animation-delay: 0.5s;
+}
+
+.landing-stars span:nth-child(5) {
+    left: 58%;
+    top: 18%;
+    animation-delay: 1.8s;
+}
+
+.landing-stars span:nth-child(6) {
+    left: 74%;
+    top: 12%;
+    animation-delay: 2.4s;
+}
+
+.landing-stars span:nth-child(7) {
+    left: 91%;
+    top: 38%;
+    animation-delay: 1.2s;
+}
+
+.landing-stars span:nth-child(8) {
+    left: 84%;
+    top: 65%;
+    animation-delay: 2.8s;
+}
+
+.landing-stars span:nth-child(9) {
+    left: 62%;
+    top: 82%;
+    animation-delay: 1.6s;
+}
+
+.landing-stars span:nth-child(10) {
+    left: 41%;
+    top: 74%;
+    animation-delay: 3s;
+}
+
+.landing-stars span:nth-child(11) {
+    left: 21%;
+    top: 82%;
+    animation-delay: 0.8s;
+}
+
+.landing-stars span:nth-child(12) {
+    left: 7%;
+    top: 63%;
+    animation-delay: 2.2s;
+}
+
+
+@keyframes starFloat {
+
+    0%,
+    100% {
+        opacity: 0.18;
+        transform: scale(0.8);
+    }
+
+    50% {
+        opacity: 0.7;
+        transform: scale(1.6);
+    }
+}
+
+
+/* =========================================================
+   NAVBAR
+   ========================================================= */
+
+.glyab-nav {
+    position: relative;
+
+    z-index: 100;
+
+    height: 82px;
+
+    padding:
+        0 clamp(24px, 4vw, 68px);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    border-bottom:
+        1px solid rgba(140, 214, 229, 0.08);
+
+    background:
+        rgba(3, 8, 12, 0.76);
+
+    backdrop-filter:
+        blur(22px);
+
+    -webkit-backdrop-filter:
+        blur(22px);
+}
+
+
+/* =========================================================
+   BRAND
+   ========================================================= */
+
+.brand-area {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    min-width: 190px;
+
+    padding: 0;
+
+    border: 0;
+
+    background: transparent;
+
+    color: inherit;
+
+    cursor: pointer;
+}
+
+
+.glyab-logo-mark {
+    width: 45px;
+    height: 45px;
+
+    flex: 0 0 auto;
+}
+
+
+.glyab-logo-mark svg {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+}
+
+
+.brand-text {
+    display: flex;
+
+    align-items: baseline;
+
+    gap: 5px;
+}
+
+
+.brand-text strong {
+    color: #eefbfe;
+
+    font-size: 19px;
+
+    font-weight: 650;
+
+    letter-spacing: 0.15em;
+
+    text-shadow:
+        0 0 20px rgba(99, 229, 255, 0.05);
+}
+
+
+.brand-text span {
+    color: var(--cyan);
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.18em;
+}
+
+
+.brand-area:hover .brand-text strong {
+    color: #ffffff;
+}
+
+
+.brand-area:hover .brand-text span {
+    text-shadow:
+        0 0 14px rgba(99, 229, 255, 0.7);
+}
+
+
+/* =========================================================
+   NAV LINKS
+   ========================================================= */
+
+.nav-links {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: clamp(22px, 3vw, 42px);
+}
+
+
+.nav-links button {
+    position: relative;
+
+    padding: 9px 0;
+
+    border: 0;
+
+    background: transparent;
+
+    color: #71878e;
+
+    font-size: 11px;
+
+    cursor: pointer;
+
+    transition:
+        color 180ms ease;
+}
+
+
+.nav-links button::after {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: 0;
+
+    width: 0;
+    height: 1px;
+
+    background:
+        linear-gradient(90deg,
+            transparent,
+            var(--cyan),
+            transparent);
+
+    transform:
+        translateX(-50%);
+
+    transition:
+        width 220ms ease;
+}
+
+
+.nav-links button:hover {
+    color: #d9f9fd;
+}
+
+
+.nav-links button:hover::after {
+    width: 100%;
+}
+
+
+/* =========================================================
+   NAV ACTIONS
+   ========================================================= */
+
+.nav-actions {
+    min-width: 210px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    gap: 18px;
+}
+
+
+.system-indicator {
+    display: flex !important;
+
+    align-items: center;
+
+    gap: 7px;
+
+    color: #61777e;
+
+    font-size: 8px;
+
+    letter-spacing: 0.13em;
+
+    white-space: nowrap;
+}
+
+
+.system-indicator i {
+    width: 6px;
+    height: 6px;
+
+    display: block;
+
+    border-radius: 50%;
+
+    background: #52e4ad;
+
+    box-shadow:
+        0 0 10px rgba(82, 228, 173, 0.9);
+
+    animation:
+        readyPulse 2.2s ease-in-out infinite;
+}
+
+
+@keyframes readyPulse {
+
+    0%,
+    100% {
+        opacity: 0.45;
+        transform: scale(0.8);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+
+/* =========================================================
+   SEARCH BUTTON
+   ========================================================= */
+
+.glyab-search-button {
+    width: 34px;
+    height: 34px;
+
+    padding: 0;
+
+    display: grid;
+
+    place-items: center;
+
+    border:
+        1px solid rgba(111, 208, 225, 0.12);
+
+    border-radius: 9px;
+
+    background:
+        rgba(255, 255, 255, 0.018);
+
+    color: #7eabb5;
+
+    font-size: 19px;
+
+    cursor: pointer;
+
+    transition:
+        all 180ms ease;
+}
+
+
+.glyab-search-button:hover {
+    color: var(--cyan);
+
+    border-color:
+        rgba(99, 229, 255, 0.35);
+
+    background:
+        rgba(99, 229, 255, 0.06);
+
+    box-shadow:
+        0 0 24px rgba(99, 229, 255, 0.08);
+}
+
+
+/* =========================================================
+   LAUNCH BUTTON
+   ========================================================= */
+
+.nav-launch {
+    height: 40px;
+
+    min-width: 104px;
+
+    padding:
+        0 20px;
+
+    border:
+        1px solid rgba(99, 229, 255, 0.40);
+
+    border-radius: 22px;
+
+    background:
+        rgba(28, 116, 139, 0.09);
+
+    color: #c8eef4;
+
+    font-size: 9px;
+
+    font-weight: 650;
+
+    letter-spacing: 0.15em;
+
+    cursor: pointer;
+
+    transition:
+        all 200ms ease;
+}
+
+
+.nav-launch:hover {
+    border-color:
+        rgba(99, 229, 255, 0.72);
+
+    background:
+        rgba(48, 180, 210, 0.13);
+
+    box-shadow:
+        0 0 28px rgba(65, 211, 238, 0.11);
+
+    transform:
+        translateY(-1px);
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.glyab-hero {
+    position: relative;
+
+    z-index: 2;
+
+    min-height:
+        calc(100vh - 82px);
+
+    height:
+        calc(100vh - 82px);
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(520px, 0.92fr) minmax(460px, 1.08fr);
+
+    align-items: center;
+
+    padding:
+        40px clamp(32px, 6.7vw, 116px);
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   HERO CONTENT
+   ========================================================= */
+
+.hero-content {
+    position: relative;
+
+    z-index: 5;
+
+    max-width: 680px;
+
+    animation:
+        heroIn 700ms cubic-bezier(.22, 1, .36, 1);
+}
+
+
+@keyframes heroIn {
+    from {
+        opacity: 0;
+        transform:
+            translateY(14px);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0);
+    }
+}
+
+
+.hero-kicker {
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    margin-bottom: 28px;
+
+    color: #4d99aa;
+
+    font-size: 8px;
+
+    letter-spacing: 0.28em;
+}
+
+
+.kicker-line {
+    width: 40px;
+    height: 1px;
+
+    background:
+        rgba(85, 224, 247, 0.85);
+}
+
+
+/* =========================================================
+   GLYAB HERO TITLE
+   ========================================================= */
+
+.hero-content h1 {
+    margin: 0;
+
+    color: #edfaff;
+
+    font-size:
+        clamp(76px, 9.7vw, 148px);
+
+    line-height: 0.80;
+
+    font-weight: 200;
+
+    letter-spacing:
+        -0.058em;
+
+    text-shadow:
+        0 0 60px rgba(99, 229, 255, 0.055);
+}
+
+
+.hero-content h1 span {
+    display: inline-block;
+
+    margin-left: 13px;
+
+    color: var(--cyan);
+
+    font-size: 0.38em;
+
+    font-weight: 700;
+
+    vertical-align: top;
+
+    letter-spacing:
+        0.02em;
+}
+
+
+/* =========================================================
+   HERO SUBTITLE
+   ========================================================= */
+
+.hero-content h2 {
+    max-width: 590px;
+
+    margin:
+        32px 0 0;
+
+    color: #93aab1;
+
+    font-size:
+        clamp(27px, 3.05vw, 43px);
+
+    line-height: 1.08;
+
+    font-weight: 300;
+
+    letter-spacing:
+        -0.025em;
+}
+
+
+.hero-content h2 strong {
+    display: block;
+
+    margin-top: 1px;
+
+    color: #e5f7fa;
+
+    font-weight: 520;
+}
+
+
+/* =========================================================
+   HERO DESCRIPTION
+   ========================================================= */
+
+.hero-content>p {
+    max-width: 610px;
+
+    margin:
+        25px 0 0;
+
+    color: #617b84;
+
+    font-size: 13px;
+
+    line-height: 1.78;
+}
+
+
+/* =========================================================
+   LIVE INTELLIGENCE STRIP
+   ========================================================= */
+
+.hero-content>div[style] {
+    border-radius: 10px !important;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.025),
+        0 20px 50px rgba(0, 0, 0, 0.16);
+
+    animation:
+        intelligenceAppear 500ms ease;
+}
+
+
+@keyframes intelligenceAppear {
+    from {
+        opacity: 0;
+        transform:
+            translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0);
+    }
+}
+
+
+/* =========================================================
+   HERO ACTIONS
+   ========================================================= */
+
+.hero-actions {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-top: 30px;
+}
+
+
+.primary-launch,
+.secondary-button {
+    height: 52px;
+
+    cursor: pointer;
+
+    font-size: 9px;
+
+    font-weight: 650;
+
+    letter-spacing: 0.15em;
+
+    transition:
+        all 200ms ease;
+}
+
+
+.primary-launch {
+    min-width: 244px;
+
+    padding:
+        0 24px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    border:
+        1px solid rgba(99, 229, 255, 0.62);
+
+    background:
+        linear-gradient(135deg,
+            rgba(40, 148, 174, 0.20),
+            rgba(5, 24, 32, 0.62));
+
+    color: #e1faff;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.035);
+}
+
+
+.primary-launch b {
+    color: var(--cyan);
+
+    font-size: 18px;
+
+    font-weight: 300;
+}
+
+
+.primary-launch:hover {
+    border-color:
+        rgba(110, 235, 255, 0.95);
+
+    background:
+        linear-gradient(135deg,
+            rgba(43, 161, 189, 0.28),
+            rgba(5, 27, 36, 0.72));
+
+    box-shadow:
+        0 14px 45px rgba(37, 188, 218, 0.09);
+
+    transform:
+        translateY(-2px);
+}
+
+
+.secondary-button {
+    min-width: 195px;
+
+    padding:
+        0 22px;
+
+    border:
+        1px solid rgba(115, 164, 174, 0.16);
+
+    background:
+        rgba(255, 255, 255, 0.018);
+
+    color: #718890;
+}
+
+
+.secondary-button:hover {
+    color: #d5f6fa;
+
+    border-color:
+        rgba(99, 229, 255, 0.34);
+
+    background:
+        rgba(99, 229, 255, 0.035);
+}
+
+
+/* =========================================================
+   HERO META
+   ========================================================= */
+
+.hero-meta {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 38px;
+
+    margin-top: 42px;
+}
+
+
+.hero-meta div {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 9px;
+}
+
+
+.hero-meta strong {
+    color: #4bdcf7;
+
+    font-size: 8px;
+
+    font-weight: 500;
+}
+
+
+.hero-meta span {
+    color: #4d6871;
+
+    font-size: 7px;
+
+    line-height: 1.5;
+
+    letter-spacing: 0.12em;
+}
+
+
+/* =========================================================
+   ORBITAL VISUAL
+   ========================================================= */
+
+.hero-visual {
+    position: relative;
+
+    height: 100%;
+
+    min-height: 540px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+.orbital-system {
+    position: relative;
+
+    width:
+        min(43vw, 580px);
+
+    height:
+        min(43vw, 580px);
+
+    min-width: 390px;
+    min-height: 390px;
+
+    border-radius: 50%;
+
+    will-change: transform;
+
+    filter:
+        drop-shadow(0 0 45px rgba(44, 192, 224, 0.035));
+}
+
+
+/* =========================================================
+   ORBITS
+   ========================================================= */
+
+.orbit {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    border:
+        1px solid rgba(74, 214, 240, 0.15);
+
+    border-radius: 50%;
+
+    transform:
+        translate(-50%, -50%);
+}
+
+
+.orbit::after {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    top: 0;
+
+    width: 3px;
+    height: 3px;
+
+    border-radius: 50%;
+
+    background: #6beaff;
+
+    box-shadow:
+        0 0 10px rgba(107, 234, 255, 0.9);
+}
+
+
+.orbit-a {
+    width: 100%;
+    height: 42%;
+}
+
+
+.orbit-b {
+    width: 74%;
+    height: 74%;
+}
+
+
+.orbit-c {
+    width: 42%;
+    height: 100%;
+}
+
+
+/* =========================================================
+   CORE
+   ========================================================= */
+
+.planet-core {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 164px;
+    height: 164px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border:
+        1px solid rgba(87, 224, 247, 0.30);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(circle,
+            rgba(20, 93, 116, 0.26),
+            rgba(3, 13, 19, 0.95) 68%);
+
+    box-shadow:
+        0 0 75px rgba(42, 204, 237, 0.08),
+        inset 0 0 45px rgba(42, 204, 237, 0.08);
+
+    transform:
+        translate(-50%, -50%);
+
+    transition:
+        transform 950ms linear;
+}
+
+
+.planet-core::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 13px;
+
+    border:
+        1px solid rgba(94, 220, 241, 0.09);
+
+    border-radius: 50%;
+}
+
+
+.planet-core .glyab-logo-mark {
+    position: relative;
+
+    z-index: 2;
+
+    width: 78px;
+    height: 78px;
+}
+
+
+.core-glow {
+    position: absolute;
+
+    width: 90px;
+    height: 90px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(65, 218, 245, 0.12);
+
+    filter:
+        blur(25px);
+
+    animation:
+        coreGlow 3.5s ease-in-out infinite;
+}
+
+
+@keyframes coreGlow {
+
+    0%,
+    100% {
+        opacity: 0.35;
+        transform: scale(0.85);
+    }
+
+    50% {
+        opacity: 0.8;
+        transform: scale(1.12);
+    }
+}
+
+
+.core-label {
+    position: absolute;
+
+    left: 50%;
+
+    bottom: -34px;
+
+    transform:
+        translateX(-50%);
+
+    color: #5ddff6;
+
+    font-size: 7px;
+
+    white-space: nowrap;
+
+    letter-spacing: 0.30em;
+}
+
+
+/* =========================================================
+   ORBIT NODES
+   ========================================================= */
+
+.orbit-node {
+    position: absolute;
+
+    width: 34px;
+    height: 34px;
+
+    display: grid;
+
+    place-items: center;
+
+    border:
+        1px solid rgba(91, 222, 244, 0.27);
+
+    border-radius: 50%;
+
+    background:
+        rgba(3, 13, 18, 0.88);
+
+    color: #72e8fa;
+
+    font-size: 7px;
+
+    font-weight: 650;
+
+    box-shadow:
+        0 0 18px rgba(62, 213, 241, 0.06);
+}
+
+
+.node-one {
+    left: 15%;
+    top: 42%;
+}
+
+
+.node-two {
+    right: 18%;
+    top: 24%;
+}
+
+
+.node-three {
+    right: 9%;
+    bottom: 28%;
+}
+
+
+.node-four {
+    left: 25%;
+    bottom: 13%;
+}
+
+
+/* =========================================================
+   VISUAL TELEMETRY
+   ========================================================= */
+
+.visual-data {
+    position: absolute;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    color: #3f5d65;
+
+    font-size: 7px;
+
+    letter-spacing: 0.18em;
+}
+
+
+.visual-data strong {
+    color: #5adff7;
+
+    font-weight: 500;
+}
+
+
+.visual-data-top {
+    top: 18%;
+
+    right: 3%;
+}
+
+
+.visual-data-bottom {
+    right: 4%;
+
+    bottom: 12%;
+}
+
+
+/* =========================================================
+   CAPABILITIES
+   ========================================================= */
+
+.capabilities {
+    position: relative;
+
+    z-index: 5;
+
+    padding:
+        82px clamp(24px, 7vw, 120px) 78px;
+
+    border-top:
+        1px solid rgba(125, 213, 229, 0.07);
+
+    background:
+        linear-gradient(180deg,
+            rgba(3, 9, 13, 0.78),
+            rgba(2, 7, 10, 0.98));
+}
+
+
+.capability-heading>span {
+    color: #4c8792;
+
+    font-size: 8px;
+
+    letter-spacing: 0.28em;
+}
+
+
+.capability-heading h3 {
+    max-width: 700px;
+
+    margin:
+        13px 0 0;
+
+    color: #8ca3aa;
+
+    font-size:
+        clamp(27px, 3vw, 40px);
+
+    line-height: 1.08;
+
+    font-weight: 300;
+
+    letter-spacing:
+        -0.025em;
+}
+
+
+.capability-heading h3 strong {
+    display: block;
+
+    color: #e2f6f9;
+
+    font-weight: 430;
+}
+
+
+.capability-cards {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 13px;
+
+    margin-top: 45px;
+}
+
+
+/* =========================================================
+   CAPABILITY CARD
+   ========================================================= */
+
+.capability-card {
+    position: relative;
+
+    min-height: 210px;
+
+    padding: 26px;
+
+    overflow: hidden;
+
+    text-align: left;
+
+    border:
+        1px solid rgba(117, 180, 193, 0.09);
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(145deg,
+            rgba(11, 25, 31, 0.76),
+            rgba(3, 10, 14, 0.76));
+
+    color: inherit;
+
+    cursor: pointer;
+
+    transition:
+        transform 220ms ease,
+        border-color 220ms ease,
+        background 220ms ease,
+        box-shadow 220ms ease;
+}
+
+
+.capability-card::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 2px;
+    height: 0;
+
+    background:
+        linear-gradient(180deg,
+            transparent,
+            var(--cyan),
+            transparent);
+
+    transition:
+        height 260ms ease;
+}
+
+
+.capability-card:hover,
+.capability-card.active {
+    transform:
+        translateY(-5px);
+
+    border-color:
+        rgba(99, 229, 255, 0.24);
+
+    background:
+        linear-gradient(145deg,
+            rgba(13, 36, 44, 0.86),
+            rgba(3, 12, 17, 0.86));
+
+    box-shadow:
+        0 22px 55px rgba(0, 0, 0, 0.28),
+        0 0 35px rgba(43, 195, 224, 0.045);
+}
+
+
+.capability-card:hover::before,
+.capability-card.active::before {
+    height: 100%;
+}
+
+
+.feature-icon {
+    width: 38px;
+    height: 38px;
+
+    margin-bottom: 25px;
+
+    fill: none;
+
+    stroke:
+        #55def7;
+
+    stroke-width: 1.5;
+}
+
+
+.capability-card>span {
+    display: block;
+
+    color: #4f8a95;
+
+    font-size: 7px;
+
+    letter-spacing: 0.20em;
+}
+
+
+.capability-card strong {
+    display: block;
+
+    margin-top: 9px;
+
+    color: #d7f3f6;
+
+    font-size: 17px;
+
+    line-height: 1.3;
+
+    font-weight: 430;
+}
+
+
+.capability-card small {
+    display: block;
+
+    max-width: 270px;
+
+    margin-top: 14px;
+
+    color: #5d737b;
+
+    font-size: 10px;
+
+    line-height: 1.65;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.glyab-footer {
+    position: relative;
+
+    z-index: 5;
+
+    min-height: 72px;
+
+    padding:
+        0 clamp(24px, 7vw, 120px);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    border-top:
+        1px solid rgba(125, 213, 229, 0.06);
+
+    color: #40565d;
+
+    font-size: 7px;
+
+    letter-spacing: 0.16em;
+
+    background:
+        #020609;
+}
+
+
+.glyab-footer div:first-child {
+    color: #56dff7;
+}
+
+
+/* =========================================================
+   SEARCH OVERLAY
+   Works with existing inline search UI
+   ========================================================= */
+
+.glyab-landing button {
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+.glyab-search-button+.system-indicator {
+    margin-left: 1px;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+.glyab-landing::-webkit-scrollbar {
+    width: 6px;
+}
+
+
+.glyab-landing::-webkit-scrollbar-track {
+    background: #020609;
+}
+
+
+.glyab-landing::-webkit-scrollbar-thumb {
+    background:
+        rgba(82, 193, 216, 0.25);
+
+    border-radius: 10px;
+}
+
+
+.glyab-landing::-webkit-scrollbar-thumb:hover {
+    background:
+        rgba(82, 193, 216, 0.45);
+}
+
+
+/* =========================================================
+   RESPONSIVE — TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .nav-links {
+        gap: 20px;
+    }
+
+    .nav-actions {
+        min-width: 170px;
+    }
+
+    .system-indicator {
+        display: none !important;
+    }
+
+    .glyab-hero {
+        grid-template-columns:
+            minmax(440px, 0.9fr) minmax(380px, 1fr);
+
+        padding-left: 55px;
+        padding-right: 55px;
+    }
+
+    .hero-content h1 {
+        font-size: clamp(70px, 9vw, 112px);
+    }
+
+    .orbital-system {
+        min-width: 350px;
+        min-height: 350px;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+   ========================================================= */
+
+@media (max-width: 820px) {
+
+    .glyab-nav {
+        height: 70px;
+
+        padding:
+            0 20px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .brand-area {
+        min-width: auto;
+    }
+
+    .nav-actions {
+        min-width: auto;
+
+        gap: 10px;
+    }
+
+    .glyab-hero {
+        height: auto;
+
+        min-height: 920px;
+
+        display: block;
+
+        padding:
+            65px 24px 90px;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero-content h1 {
+        font-size:
+            clamp(72px, 18vw, 112px);
+    }
+
+    .hero-content h2 {
+        font-size: 30px;
+    }
+
+    .hero-content>p {
+        font-size: 12px;
+    }
+
+    .hero-visual {
+        height: 430px;
+
+        min-height: 430px;
+
+        margin-top: 15px;
+
+        opacity: 0.75;
+    }
+
+    .orbital-system {
+        width: 390px;
+        height: 390px;
+
+        min-width: 390px;
+        min-height: 390px;
+    }
+
+    .capability-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .glyab-footer {
+        min-height: auto;
+
+        padding:
+            24px;
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 10px;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 520px) {
+
+    .brand-text strong {
+        font-size: 15px;
+    }
+
+    .brand-text span {
+        font-size: 8px;
+    }
+
+    .glyab-logo-mark {
+        width: 38px;
+        height: 38px;
+    }
+
+    .nav-launch {
+        min-width: 76px;
+
+        height: 35px;
+
+        padding: 0 14px;
+    }
+
+    .glyab-search-button {
+        width: 32px;
+        height: 32px;
+    }
+
+    .glyab-hero {
+        padding:
+            48px 20px 80px;
+    }
+
+    .hero-kicker {
+        font-size: 7px;
+
+        letter-spacing: 0.20em;
+    }
+
+    .hero-content h1 {
+        font-size: 70px;
+    }
+
+    .hero-content h1 span {
+        margin-left: 8px;
+    }
+
+    .hero-content h2 {
+        margin-top: 28px;
+
+        font-size: 27px;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .primary-launch,
+    .secondary-button {
+        width: 100%;
+    }
+
+    .hero-meta {
+        gap: 18px;
+
+        flex-wrap: wrap;
+    }
+
+    .hero-visual {
+        height: 360px;
+
+        min-height: 360px;
+    }
+
+    .orbital-system {
+        width: 330px;
+        height: 330px;
+
+        min-width: 330px;
+        min-height: 330px;
+    }
+
+    .planet-core {
+        width: 135px;
+        height: 135px;
+    }
+
+    .visual-data {
+        font-size: 6px;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}

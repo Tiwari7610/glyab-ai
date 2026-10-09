@@ -1,0 +1,45 @@
+{
+    "project": "GLYAB",
+    "model_type": "hist_gradient_boosting",
+    "target": "historical_glof",
+    "dataset_rows": 16273,
+    "positive_samples": 1630,
+    "negative_samples": 14643,
+    "features": [
+        "latitude",
+        "longitude",
+        "area_km2",
+        "elevation_min_m",
+        "elevation_max_m",
+        "mean_elevation_m",
+        "slope_deg",
+        "aspect_deg",
+        "elevation_range_m",
+        "area_log",
+        "o1region"
+    ],
+    "metrics": {
+        "name": "hist_gradient_boosting",
+        "accuracy": 0.9800307219662059,
+        "precision": 0.9223300970873787,
+        "recall": 0.8742331288343558,
+        "f1": 0.8976377952755905,
+        "roc_auc": 0.9940273591564784,
+        "confusion_matrix": [
+            [
+                2905,
+                24
+            ],
+            [
+                41,
+                285
+            ]
+        ]
+    },
+    "leakage_columns_excluded": [
+        "historical_event_count_proxy",
+        "historical_event_year",
+        "historical_glof",
+        "nearest_glof_km"
+    ]
+}

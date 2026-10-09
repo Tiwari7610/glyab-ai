@@ -1,0 +1,180 @@
+/* =========================================================
+   GLYAB — GLOBAL FULLSCREEN FOUNDATION
+========================================================= */
+
+:root {
+  font-family:
+    "Segoe UI",
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+
+  color: #dff8ff;
+  background: #01040a;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+
+html {
+  width: 100%;
+  height: 100%;
+
+  margin: 0;
+  padding: 0;
+
+  background: #01040a;
+}
+
+
+body {
+  width: 100%;
+  height: 100%;
+
+  min-width: 100%;
+  min-height: 100%;
+
+  margin: 0;
+  padding: 0;
+
+  background: #01040a;
+
+  overflow: hidden;
+}
+
+
+#root {
+  position: fixed;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  min-width: 100vw;
+  min-height: 100vh;
+
+  margin: 0;
+  padding: 0;
+
+  overflow: hidden;
+
+  background: #01040a;
+}
+
+
+/* =========================================================
+   FORM ELEMENTS
+========================================================= */
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+
+button {
+  border: 0;
+  outline: none;
+}
+
+
+button:focus-visible {
+  outline:
+    1px solid rgba(77, 224, 255, 0.8);
+}
+
+
+/* =========================================================
+   TEXT RESET
+========================================================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+
+/* =========================================================
+   GLYAB CANVAS SAFETY
+========================================================= */
+
+canvas {
+  display: block;
+
+  width: 100% !important;
+  height: 100% !important;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+
+::-webkit-scrollbar-track {
+  background: #01040a;
+}
+
+
+::-webkit-scrollbar-thumb {
+  background: #174553;
+  border-radius: 10px;
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+  background: #267287;
+}
+
+
+/* =========================================================
+   SELECTION
+========================================================= */
+
+::selection {
+  background: rgba(50, 214, 255, 0.25);
+  color: #effcff;
+}
+
+
+/* =========================================================
+   MOBILE / DESKTOP VIEWPORT
+========================================================= */
+
+@media (max-width: 900px) {
+
+  html,
+  body,
+  #root {
+    width: 100%;
+    height: 100%;
+  }
+}
